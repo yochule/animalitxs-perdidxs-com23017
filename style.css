@@ -9,6 +9,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 1rem;
 }
 
 html{

@@ -1,0 +1,62 @@
+1 - mejorar la paleta de colores
+
+2 - modificar/eliminar los bordes
+
+3 - revisar fuentes (me gustan las monoespaciadas)
+    * voy a poner la Fira Code, y de respaldo la familia monoespaciadas
+
+
+4 - que la pag de inicio sea mas tipo:
+
+                    --------------------------------
+                    |(Lo)     buscar/refus     (Lo) |   inicio (lo pongo dentro de los logos)
+                    --------------------------------|
+                    |               |               |
+                    |               |               |
+                    |      Gatx?    |     Perrx?    |
+                    |               |               |          
+                    |               |               |
+                    |-------------------------------|
+                    |      resumen quienes somos    |   (expandible, version larga), 
+                    |_______________________________|   tambien podemos poner algunas recomendaciones 
+                    |-------miniatura ultimos 4-----|
+                    |       |       |       |       |
+                    |       |       |       |       |
+                    ---------------------------------
+                    |           pie de pag          |   agregar email-me
+                    --------------------------------
+
+
+                    --------------------------------------------------------
+                    |(Lo)                   buscar/refus               (Lo) |       inicio (lo pongo dentro de los logos)
+                    |-------------------------------------miniatura ultimos |
+                    |                   |                   |       |       |
+                    |                   |                   |       |       |
+                    |       gatx?       |      perrx?       |_______|_______|
+                    |                   |                   |       |       |                    
+                    |-------------------|-------------------|       |       |
+                    |        resumen quienes somos          |       |       |     (expandible, version larga),    
+                    --------------------------------------------------------|       tambien podemos poner algunas recomendacione
+                    |                       pie de pag                      |       agregar email-me
+                    ---------------------------------------------------------
+
+
+5 - las fotos de los animales ponerlas todas dentro de img/galeria
+    * hecho
+
+6 - tener una función de busqueda en la galería de gatxs o de perrxs. se muestra por prioridad los matches
+
+7 - flex -> encabezado o pie de pagina?
+
+8 - implementar grid pal resto de la web
+
+9 - Utilizar al menos un Iframe, íconos de FontAwesome o Flaticon; y fuentes locales o bien de Google Fonts o similar
+    * uso Fira Code (fuente de Google)
+    * uso Iframe cuando pongo la red de refugios
+
+
+
+
+
+
+
