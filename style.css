@@ -2,6 +2,12 @@
 :root{
     --color-fondo: brown;
     --color-header: aqua;
+    --color-botones: blue;
+    --color-borde: lightblue;
+    --color-fondo-selector: lightgreen;
+    --color-texto-emergente: beige;
+    --color-sombra-tarjetitas: yellowgreen;
+    --color-fondo-miniaturas: blueviolet;
 }
 
 
@@ -13,73 +19,36 @@
     font-size: 1rem;
 }
 
-html{
+
+.contenedor-pag{
+    width: 95%;
+    margin: 2% auto;
     background-color: var(--color-fondo);
-    border: 0.5rem red solid;
-    font-size: 1rem;
-    font-family: monospace
+    display: grid;
+    grid-gap: 1%;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
 }
 
-header{
+
+
+
+
+
+
+
+/* ordeno los elementos del encabezado */
+.contenedor-pag .encabezado{
     background-color: var(--color-header);
-    /* color: beige; */
-    border: 0.5rem lightblue solid;
-    width: 100%;
+    border-radius: 1.5rem;
+    padding: 1%;
+
+    border: 0.5rem var(--color-borde) solid;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
-
-main{
-    background-color: burlywood;
-    border: 0.5rem lightcoral solid;
-    margin: 0.5rem;
-}
-
-/* -----fooooter----- */
-footer{
-    background-color: blue;
-    border: 0.5rem cornflowerblue solid;
-    width: 100%;
-    font-size: 1.1rem;
-    color: antiquewhite;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.copyleft{
-    font-size: 1.5rem;
-    display: inline-block;
-    transform: rotateY(180deg);
-}
-.footer-contenedor-nosotros{
-    display: block;
-    justify-content: center;
- }
-.footer-contenedor-redes{
-    display: block;
-}
-
-
-
-/* ----encabezado------ */
-
-header a{
-    text-decoration: none;
-    font-weight: bold;
-    color: azure;
-    padding: 0.3rem;
-    border-radius: 1rem;
-    background-color: blue;
-}
-header a:hover{
-    transition: 0.5s;
-    color: blueviolet;
-    font-weight: bolder;
-    /* padding: 0.5rem; */
-    background-color: blanchedalmond;
-}
+/* creo q esto sobre los logos no es necesario, pero gué */
 .logo{
     display: flex;
 }
@@ -87,35 +56,84 @@ header a:hover{
     height: 3rem;
 }
 
+/* decoración de los botones para los enlaces */
+.contenedor-pag .encabezado a{
+    text-decoration: none;
+    font-weight: bold;
+    color: azure;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    background-color: var(--color-botones);
+}
+/* efecto al pasar por sobre los botones */
+.contenedor-pag .encabezado a:hover{
+    transition: 0.5s;
+    color: black;
+    font-weight: bolder;
+    background-color: var(--color-header);
+}
 
-/* -----area de seleccion------ */
-main h2{
+
+
+
+
+
+
+
+
+
+
+/* 
+.contenedor-pag 
+.principal 
+.selector 
+.contenedor-imagen 
+    .cuadro-imagen
+        .imagen
+    .cuadro-imagen
+        .imagen
+*/
+/* centro el contenedor "principal" */
+.contenedor-pag .principal{
+    background-color: var(--color-fondo-selector);
+    padding: 3%;
+    border-radius: 1.5rem;
+    margin: 0 auto;
+}
+/* centro el texto */
+.contenedor-pag h2{
     text-align: center;
 }
 
-.contenedor-imagen{    
-    background-color: azure;
-    padding: 2%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1%;
-    border-radius: 1rem;
+/* pongo el texto y el cuadro selector arriba y abajo */
+.contenedor-pag .principal .selector{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
-.imagen{
-    height: 100%;
-    width: 100%;
+/* ahora pongo las dos imagenes dentro del cuadro selector una al lado de la otra, y le agrego un espacio entre ellas */
+.contenedor-pag .principal .selector .contenedor-imagen{
+    display: flex;
+    gap: 1%;
+    justify-content: center;
+}
+/* divido el contenedor-imagen en dos mitades iguales */
+.contenedor-pag .principal .selector .contenedor-imagen .cuadro-imagen{
+    max-width: 50%;
+}
+/* hago que las imagenes se ajusten a sus respectivos contenedores */
+.contenedor-pag .principal .selector .contenedor-imagen .cuadro-imagen .imagen{
     object-fit: cover;
+    width: 100%;
+    height: 100%;
     border-radius: 1rem;
 }
 
-/* ...... */
+
+/* ahora voy a hacer q aparezcan los enlaces al pasar sobre las imagenes de seleccion */
 .cuadro-imagen{
     position: relative;
-    width: 100%;
-}
-.imagen{
-    display: block;
     width: 100%;
 }
 .texto-sobreimpreso{
@@ -128,72 +146,366 @@ main h2{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.6);
-    border-radius: 1rem;
-    color: beige;
-    font-size: 1.5rem;
+    background: transparent;
+    color: var(--color-texto-emergente);
+    font-size: 2rem;
     font-weight: bold;
     opacity: 0;
-    transition: opacity 0.25s;
+    transition: opacity 0.3s;
 }
 .texto-sobreimpreso:hover{
-    transition: 0.5s;
-    transform: scale(1.1, 1.1);
+    transition: 0.3s;
+    transform: scale(1.2, 1.5);
     opacity: 1;
+    z-index: 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* decorando el "sobre nosotros" */
+.contenedor-pag .sobre{
+    background-color: var(--color-fondo-selector);
+    padding: 3%;
+    border-radius: 1.5rem;
+    margin: 0 auto;
+}
+/* centro el texto */
+.contenedor-pag h3,
+.contenedor-pag p{
+    text-align: center;
+}
+
+
+/* acordion adaptado de https://www.loginradius.com/blog/engineering/css3-accordion/ */
+.accordion{
+    max-width: 100%;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: var(--color-fondo-miniaturas);
+}
+
+.accordion__label, .accordion__content{
+    padding: 1rem 2rem;
+}
+
+.accordion__label{
+    display: block;
+    color: var(--color-texto-emergente);
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.1s;
+}
+
+.accordion__label:hover{
+    background-color: var(--color-header);
+}
+
+.accordion__content{
+    background: white;
+    /* line-height: 1.6; */
+    /* font-size: 0.85em; */
+    display: none;
+}
+.accordion__content > p{
+    text-align: left;
+}
+.accordion__content .nosotros{
+    font-weight: bold;
+}
+.accordion__content .descripcion{
+    font-style: italic;
+}
+
+.accordion__input{
+    display: none;
+}
+
+.accordion__input:checked ~ .accordion__content{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ------ordenando las tarjetitas ----*/
+.contenedor-pag .miniaturas{
+    background-color: var(--color-fondo-miniaturas);
+    padding: 3%;
+    border-radius: 1.5rem;
+}
+
+/* pongo una grid para ordenar las tarjetas y darle tamaño min */
 .contenedor-tarjetas{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    padding: 1rem;
-    grid-gap: 2rem;
-
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
 }
+
+/* ordeno la imagen respecto de la lista con info, dentro de cada tarjeta */
 .tarjeta{
-    background-color: blue;
-    border-radius: 2rem;
-    box-shadow: 0 0 3rem yellowgreen;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1.5rem;
+    box-shadow: 0 0 3rem var(--color-sombra-tarjetitas);
 }
 .tarjeta img{
-    position: relative;
+    object-fit: cover;
     width: 100%;
-    /* display: block; */
-    border-radius: 2rem 2rem 0 0;
+    height: 1000%;
+    border-radius: 1.5rem;
 }
+/* escondo la lista con la info */
 .tarjeta ul{
-    text-align: center;
-    list-style: none;
-    color: white;
-    font-weight: bold;
+    display: none;
 }
-.tarjeta li:nth-child(odd){background: red;}
-
 
 .contenedor-tarjetas .tarjeta{
     transition: all 0.25s;
 }
-
 .contenedor-tarjetas .tarjeta:hover{
     transform: translateY(-1rem);
-    box-shadow: 0 2rem 2rem yellowgreen;
+    box-shadow: 0 2rem 2rem var(--color-sombra-tarjetitas);
 }
 
 
-/* -----sobre los refugios---------- */
-.lista-refugios{
-    display: grid;
-    grid-template-columns: 1fr;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----fooooter----- */
+.contenedor-pag .pie-pagina{
+    background-color: var(--color-header);
+    border-radius: 1.5rem;
+    padding: 1%;
+    border: 0.5rem var(--color-borde) solid;
+
+    font-size: 1.1rem;
+    color: var(--color-texto-emergente);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.lista-refugios iframe{
+/* doy vuelta el signo de copyleft */
+.copyleft{
+    font-size: 1.5rem;
+    display: inline-block;
+    transform: rotateY(180deg);
+}
+/* centro los contenedores donde estan los textos */
+.footer-contenedor-nosotros{
+    display: block;
+    justify-content: center;
+ }
+ /* ordeno los iconos de las redes sociales e email */
+.footer-contenedor-redes{
     width: 100%;
-    height: 15rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+/* ajusto el tamaño del contenedor a los 32px */
+.footer-contenedor-redes > a{
+    height: 32px;
+}
+/* centro com y copyleft */
+.footer-contenedor-nosotros > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------
+|(Lo)            buscar/refus               (Lo) | 
+|------------------------------miniatura ultimos |
+|                |               |       |       |
+|                |               |       |       |
+|    gatx?       |     perrx?    |_______|_______|
+|                |               |       |       |       
+|----------------|---------------|       |       |
+|    resumen quienes somos       |       |       | 
+-------------------------------------------------| 
+|                  pie de pag                    | 
+------------------------------------------------- */
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .contenedor-pag .encabezado{
+        background-color: var(--color-fondo);
+    }
+    .contenedor-pag{
+        display: grid;
+        grid-template-columns: 70% 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+    .contenedor-pag .encabezado{
+        grid-area: encabezado;
+    }
+    .contenedor-pag .principal{
+        grid-area: principal;
+    }
+    .contenedor-pag .sobre{
+        grid-area: sobre;
+    }
+    .contenedor-pag .miniaturas{
+        grid-area: miniaturas;
+    }
+    .contenedor-pag .pie-pagina{
+        grid-area: pie-pagina;
+    }
+
+    .contenedor-pag{
+        grid-template-areas: "encabezado encabezado"
+                            "principal miniaturas"
+                            "sobre miniaturas"
+                            "pie-pagina pie-pagina";
+    }
+
+    .contenedor-tarjetas{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 1rem;
+    }
+
+
+    .contenedor-pag .pie-pagina{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .footer-contenedor-redes{
+        width: 50%;
+    }
+   
+    
+    .lista-refugios{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* .tarjeta img{
+    object-fit: cover;
+    width: 100%;
+    height: 60%;
+    border-radius: 1.5rem 1.5rem 0 0;
+} */
+/* .tarjeta ul{
+    display: none;
+} */
+/* .tarjeta ul{
+    text-align: center;
+    list-style: none;
+    color: var(--color-texto-emergente);
+    font-weight: bold;
+}
+.tarjeta li:nth-child(odd){background: var(--color-botones);}
+.tarjeta li:nth-child(even){background: var(--color-fondo);} */
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1024px){
+    .contenedor-pag .encabezado{
+        background-color: var(--color-fondo-miniaturas);
+    }
+    .contenedor-pag{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(4, auto);
+    }
+    .contenedor-pag{
+        grid-template-areas: "encabezado encabezado"
+                            "principal miniaturas"
+                            "sobre miniaturas"
+                            "pie-pagina pie-pagina";
+    }
+    .footer-contenedor-redes{
+        width: 30%;
+    }
+    .footer-contenedor-nosotros{
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+
+
+
+
+
+
 
 
 /* -----formulario------- */
@@ -219,75 +531,3 @@ textarea{
     width: 80%;
     min-height: 5rem;
 }
-
-
-
-/* ---galeria---- */
-h2{
-    text-align: center;
-    padding: 1.5rem;
-}
-h3{
-    margin-left: 2rem;
-}
-
-
-
-/* --------------------------------------------------------------- */
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    header {
-        background-color: blue;
-    }
-    main{
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-    }
-    
-    .lista-refugios{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    footer{
-        flex-direction: row;
-        justify-content: space-around;
-    }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1024px) {
-    header {
-        background-color: pink;
-    }
-    main{
-        display: grid;
-        grid-template-columns: 2fr 2fr;
-    }
-    .lista-refugios{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    footer{
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    .footer-contenedor-nosotros{
-        width: 60%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: baseline;
-        /* display: flex;
-        align-items: baseline;
-        padding-right: 2rem; */
-}
-
-}
-
-
-
-
-
-
-
-

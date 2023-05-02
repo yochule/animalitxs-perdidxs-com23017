@@ -1,0 +1,188 @@
+/* --esto lo descrubrí muuuuy a lo último, asiq casi no lo implemente */
+:root{
+    --color-fondo: brown;
+    --color-header: aqua;
+    --color-botones: blue;
+    --color-borde: lightblue;
+    --color-fondo-selector: lightgreen;
+    --color-texto-emergente: beige;
+    --color-sombra-tarjetitas: yellowgreen;
+    --color-fondo-miniaturas: blueviolet;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+
+.contenedor-pag{
+    width: 95%;
+    margin: 2% auto;
+    background-color: var(--color-fondo);
+    display: grid;
+    grid-gap: 1%;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
+}
+
+
+
+
+
+
+
+
+
+
+/* ordeno los elementos del encabezado */
+.contenedor-pag .encabezado{
+    background-color: var(--color-header);
+    border-radius: 1.5rem;
+    padding: 1%;
+
+    border: 0.5rem var(--color-borde) solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* creo q esto sobre los logos no es necesario, pero gué */
+.logo{
+    display: flex;
+}
+.logo-img{
+    height: 3rem;
+}
+
+/* decoración de los botones para los enlaces */
+.contenedor-pag .encabezado a{
+    text-decoration: none;
+    font-weight: bold;
+    color: azure;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    background-color: var(--color-botones);
+}
+/* efecto al pasar por sobre los botones */
+.contenedor-pag .encabezado a:hover{
+    transition: 0.5s;
+    color: black;
+    font-weight: bolder;
+    background-color: var(--color-header);
+}
+
+
+
+
+
+
+
+/* ------galeria de paginas sobre refugios de animales */
+.contenedor-pag .lista-refugios{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+
+
+
+
+
+
+/* -----fooooter----- */
+.contenedor-pag .pie-pagina{
+    background-color: var(--color-header);
+    border-radius: 1.5rem;
+    padding: 1%;
+    border: 0.5rem var(--color-borde) solid;
+
+    font-size: 1.1rem;
+    color: var(--color-texto-emergente);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* doy vuelta el signo de copyleft */
+.copyleft{
+    font-size: 1.5rem;
+    display: inline-block;
+    transform: rotateY(180deg);
+}
+/* centro los contenedores donde estan los textos */
+.footer-contenedor-nosotros{
+    display: block;
+    justify-content: center;
+ }
+ /* ordeno los iconos de las redes sociales e email */
+.footer-contenedor-redes{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* ajusto el tamaño del contenedor a los 32px */
+.footer-contenedor-redes > a{
+    height: 32px;
+}
+/* centro com y copyleft */
+.footer-contenedor-nosotros > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .contenedor-pag .encabezado{
+        background-color: var(--color-fondo);
+    }
+    
+    .contenedor-pag .pie-pagina{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .footer-contenedor-redes{
+        width: 50%;
+    }
+
+}
+
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1024px){
+    .contenedor-pag .encabezado{
+        background-color: var(--color-fondo-miniaturas);
+    }
+
+    .footer-contenedor-redes{
+        width: 30%;
+    }
+    .footer-contenedor-nosotros{
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
