@@ -57,7 +57,7 @@
 }
 
 /* decoración de los botones para los enlaces */
-.contenedor-pag .encabezado a{
+.contenedor-pag .encabezado nav a{
     text-decoration: none;
     font-weight: bold;
     color: azure;

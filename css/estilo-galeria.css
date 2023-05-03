@@ -59,7 +59,7 @@
 }
 
 /* decoración de los botones para los enlaces */
-.contenedor-pag .encabezado a{
+.contenedor-pag .encabezado nav a{
     text-decoration: none;
     font-weight: bold;
     color: azure;
@@ -81,12 +81,84 @@
 
 
 
-/* ------galeria de paginas sobre refugios de animales */
-.contenedor-pag .lista-refugios{
+
+
+
+
+
+
+
+
+
+/* ------ordenando las tarjetitas ----*/
+.contenedor-pag .galeria{
+    background-color: var(--color-fondo-miniaturas);
+    padding: 3%;
+    border-radius: 1.5rem;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 3rem
 }
+.contenedor-pag .galeria > h4{
+    text-align: right;
+    font-weight: lighter;
+    font-size: 0.7rem;
+}
+.contenedor-pag .galeria > h2{
+    text-align: center;
+    margin-top: -2rem;
+}
+
+/* pongo una grid para ordenar las tarjetas y darle tamaño min */
+.contenedor-tarjetas{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+}
+
+/* ordeno la imagen respecto de la lista con info, dentro de cada tarjeta */
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1.5rem;
+    box-shadow: 0 0 3rem var(--color-sombra-tarjetitas);
+}
+.tarjeta img{
+    object-fit: cover;
+    max-width: 250px;
+    width: 100%;
+    height: 60%;
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+.tarjeta ul{
+    text-align: center;
+    list-style: none;
+    color: var(--color-texto-emergente);
+    font-weight: bold;
+}
+.tarjeta li:nth-child(odd){background: var(--color-botones);}
+.tarjeta li:nth-child(even){background: var(--color-fondo);}
+
+
+.contenedor-tarjetas .tarjeta{
+    transition: all 0.25s;
+}
+.contenedor-tarjetas .tarjeta:hover{
+    transform: translateY(-1rem);
+    box-shadow: 0 2rem 2rem var(--color-sombra-tarjetitas);
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -164,7 +236,7 @@
     .footer-contenedor-redes{
         width: 50%;
     }
-
+   
 }
 
 
