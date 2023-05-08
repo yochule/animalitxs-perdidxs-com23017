@@ -1,0 +1,365 @@
+/* --esto lo descrubrí muuuuy a lo último, asiq casi no lo implemente */
+:root{
+    --color-fondo: brown;
+    --color-header: aqua;
+    --color-botones: blue;
+    --color-borde: lightblue;
+    --color-fondo-selector: lightgreen;
+    --color-texto-emergente: beige;
+    --color-sombra-tarjetitas: yellowgreen;
+    --color-fondo-miniaturas: blueviolet;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+
+.contenedor-pag{
+    width: 95%;
+    margin: 2% auto;
+    background-color: var(--color-fondo);
+    display: grid;
+    grid-gap: 1%;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
+}
+
+
+
+
+
+
+
+
+/* ordeno los elementos del encabezado */
+.contenedor-pag .encabezado{
+    background-color: var(--color-header);
+    border-radius: 1.5rem;
+    padding: 1%;
+
+    border: 0.5rem var(--color-borde) solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* creo q esto sobre los logos no es necesario, pero gué */
+.logo{
+    display: flex;
+}
+.logo-img{
+    height: 3rem;
+}
+
+/* decoración de los botones para los enlaces */
+.contenedor-pag .encabezado nav a{
+    text-decoration: none;
+    font-weight: bold;
+    color: azure;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    background-color: var(--color-botones);
+}
+/* efecto al pasar por sobre los botones */
+.contenedor-pag .encabezado a:hover{
+    transition: 0.5s;
+    color: black;
+    font-weight: bolder;
+    background-color: var(--color-header);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----fooooter----- */
+.contenedor-pag .pie-pagina{
+    background-color: var(--color-header);
+    border-radius: 1.5rem;
+    padding: 1%;
+    border: 0.5rem var(--color-borde) solid;
+
+    font-size: 1.1rem;
+    color: var(--color-texto-emergente);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* doy vuelta el signo de copyleft */
+.copyleft{
+    font-size: 1.5rem;
+    display: inline-block;
+    transform: rotateY(180deg);
+}
+/* centro los contenedores donde estan los textos */
+.footer-contenedor-nosotros{
+    display: block;
+    justify-content: center;
+ }
+ /* ordeno los iconos de las redes sociales e email */
+.footer-contenedor-redes{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* ajusto el tamaño del contenedor a los 32px */
+.footer-contenedor-redes > a{
+    height: 32px;
+}
+/* centro com y copyleft */
+.footer-contenedor-nosotros > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+
+/* -----formulario------- */
+
+.formulario h1{
+    text-align: center;
+}
+.formulario h4{
+    text-align: center;
+}
+.formulario form{
+    margin: 2rem;
+}
+
+.formulario fieldset{
+    border: 0.2rem blue solid;
+}
+.formulario .texto{
+    text-align: center;
+}
+
+textarea{
+    width: 80%;
+    min-height: 5rem;
+}
+
+
+
+
+
+
+.formularioContacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-width: 95%;
+}
+.formularioContacto form{
+    display: flex;
+    flex-direction: column;
+    column-gap: 1rem;
+}
+
+.formularioContacto .campo{
+    text-align: center;
+}
+
+.formularioContacto form{
+    margin: 2rem;
+}
+#formulario{
+    width: 95%;
+}
+
+.formularioContacto fieldset{
+    border: 0.2rem blue solid;
+    /* width: 50%; */
+}
+
+.formularioContacto textarea{
+    width: 100%;
+    min-height: 7rem;
+}
+
+#mensajeValidacion{
+    font-size: small;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+
+/* ----------------------------------------------
+|(Lo)            buscar/refus               (Lo) | 
+|------------------------------miniatura ultimos |
+|                |               |       |       |
+|                |               |       |       |
+|    gatx?       |     perrx?    |_______|_______|
+|                |               |       |       |       
+|----------------|---------------|       |       |
+|    resumen quienes somos       |       |       | 
+-------------------------------------------------| 
+|                  pie de pag                    | 
+------------------------------------------------- */
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .contenedor-pag .encabezado{
+        background-color: var(--color-fondo);
+    }
+
+    .contenedor-pag{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3, auto);
+    }
+    .contenedor-pag .encabezado{
+        grid-area: encabezado;
+    }
+    .contenedor-pag .formularioContacto{
+        grid-area: formulario;
+    }
+    .contenedor-pag .pie-pagina{
+        grid-area: pie-pagina;
+    }
+    .contenedor-pag{
+        grid-template-areas: "encabezado"
+                            "formulario"
+                            "pie-pagina";
+    }
+
+    .contenedor-tarjetas{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 1rem;
+    }
+
+
+    .contenedor-pag .pie-pagina{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .footer-contenedor-redes{
+        width: 50%;
+    }
+   
+    .formularioContacto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        column-width: 100%;
+    }
+    .formularioContacto fieldset{
+        border: 0.2rem blue solid;
+    }
+    .formularioContacto form{
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 1%;
+    }
+    .formularioContacto .campo{
+        width: 50%;
+        text-align: center;
+    }
+
+}
+
+
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1024px){
+    .contenedor-pag .encabezado{
+        background-color: var(--color-fondo-miniaturas);
+    }
+    .contenedor-pag{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3, auto);
+    }
+    .contenedor-pag .encabezado{
+        grid-area: encabezado;
+    }
+    .contenedor-pag .formularioContacto{
+        grid-area: formulario;
+    }
+    .contenedor-pag .pie-pagina{
+        grid-area: pie-pagina;
+    }
+    .contenedor-pag{
+        grid-template-areas: "encabezado"
+                            "formulario"
+                            "pie-pagina";
+    }
+    .footer-contenedor-redes{
+        width: 30%;
+    }
+    .footer-contenedor-nosotros{
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .formularioContacto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        column-width: 100%;
+    }
+    .formularioContacto fieldset{
+        border: 0.2rem blue solid;
+    }
+    .formularioContacto form{
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 1%;
+    }
+    .formularioContacto .campo{
+        width: 50%;
+        text-align: center;
+    }
+    
+
+}
+
+
+
+
+
+
+

@@ -14,7 +14,7 @@ document.getElementById("id-encabezado").innerHTML = `
           <nav>
             <a href="galeria.html">Buscar</a>
             <a href="refugios.html">Refugios</a>
-            <a href="#">Contacto</a>
+            <a href="contacto.html">Contacto</a>
           </nav>
         </div>
           
@@ -51,8 +51,8 @@ document.getElementById("id-piedepagina").innerHTML = `
 
 
 // para poner la fecha de la ultima actualizacion
-// var ahora = new Date();
-// var fechaCorta = ahora.toLocaleString("es-ar", {day:"2-digit", month: "short", year: "numeric"});
-// var fechaLarga = ahora.toLocaleDateString("es-ar", {weekday:"long", day:"numeric", month: "long", year: "numeric"});
-// console.log(fechaCorta)
-// console.log(fechaLarga)
+var ahora = new Date();
+var fechaCorta = ahora.toLocaleString("es-ar", {day:"2-digit", month: "short", year: "numeric"});
+var fechaLarga = ahora.toLocaleDateString("es-ar", {weekday:"long", day:"numeric", month: "long", year: "numeric"});
+console.log(fechaCorta)
+console.log(fechaLarga)

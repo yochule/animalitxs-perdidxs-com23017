@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nazareno - Leila - Mariano - Jimena" />
+    <link rel="stylesheet" href="css/estilo-formularios.css" />
+    <!-- <link rel="stylesheet" href="animales.css/styleanimal.css" /> -->
+    <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+    <link
+      rel="shortcut icon"
+      href="img/icono-formulario.ico"
+      type="image/x-icon"
+    />
+    <title>Contacto</title>
+</head>
+
+  <!-- ..................................................................... -->
+
+  <body>
+
+    <!-- ..................................................................... -->
+
+    <div class="contenedor-pag">
+
+      <!-- ..................................................................... -->
+
+      <header id="id-encabezado" class="encabezado">
+
+      </header>
+
+      <!-- ..................................................................... -->
+
+      <div class="formularioContacto">
+
+          <h2>Formulario de contacto</h2>
+          <form id="formulario">
+
+            <fieldset class="campo">
+              <legend>Datos personales - (obligatorios)</legend>
+                <br>
+
+              <div>
+                <label for="nombre">Nombre y Apellido*</label>
+                <input type="text" placeholder="Juan Perez" id="nombre"/>
+              </div>
+                <br>
+
+              <div>
+                <label for="email">Email*</label>
+                <input type="email" placeholder="juanperez@gmail.com" id="email"/>
+              </div>
+                <br>
+  
+              <div>
+                <label for="consulta">Consulta*</label><br>
+                <textarea id="consulta" rows="4" placeholder="Ingrese una consulta"></textarea>
+              </div>
+
+              <p id="mensajeValidacion"></p>
+            </fieldset>
+              <br>
+
+
+
+
+
+
+            <fieldset class="campo">
+              <br>
+
+              <div>
+                <label for="telefono">Teléfono</label>
+                <input type="number" placeholder="66666666">
+              </div>
+                <br>
+  
+              <div>
+                <label>Cómo nos conociste</label><br>
+                <select multiple>
+                  <option value="">Seleccione una opción</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="twitter">twitter</option>
+                  <option value="tv">Tik Tok</option>
+                  <option value="4">Diario</option>
+                  <option value="5">Otros</option>
+                </select>
+              </div>
+                <br>
+  
+              <div>
+                <label for="">¿Quieres ayudar de alguna manera con los animales perdidos?</label>
+                <div class="lineal">
+                  <input type="radio" name="conocimientosAnimales" value="si">
+                  <label>Si</label>
+                  <input type="radio" name="conocimientosAnimales" value="no">
+                  <label>No</label>
+                </div>
+              </div>
+                <br>
+
+              <div>
+                <label>Si tu respuesta anterior fue si, de qué manera te gustaría ayudar a los animales perdidos:</label>
+                <div class="lineal">
+                  <input type="checkbox" value="eventos">
+                  <label>Organizar eventos o charlas</label>
+                  <input type="checkbox" value="aporteDinero">
+                  <label>Aportando dinero</label>
+                  <input type="checkbox" value="compartirInformacion">
+                  <label>Compartiendo información de la web</label>
+                 <input type="checkbox" value="casaTransito">
+                  <label>Casa de tránsito</label>
+                  <input type="checkbox" value="adopcion">
+                  <label>Adopción</label>
+                  <input type="checkbox" value="patrocinar">
+                  <label>Patrocinar</label>
+                </div>
+              </div>
+                <br>
+            
+                <button type="submit">Enviar</button>
+            </fieldset>
+              <br>
+
+            <!-- <button type="submit">Enviar</button> -->
+            <!-- <p id="mensajeValidacion"></p> -->
+            
+          </form>
+
+          <!-- <button type="submit">Enviar</button>
+          <p id="mensajeValidacion"></p> -->
+
+
+      </div>
+
+  <!-- ..................................................................... -->
+
+  <footer id="id-piedepagina" class="pie-pagina">
+
+  </footer>
+
+  <!-- ..................................................................... -->
+
+  </div>
+
+  <!-- ..................................................................... -->
+  <script src="js/script.js"></script>
+  <script src="js/validacion.js"></script>
+
+  </body>
+
+</html>
