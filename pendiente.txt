@@ -46,6 +46,7 @@
 
 6 - tener una función de busqueda en la galería de gatxs o de perrxs. se muestra por prioridad los matches
 
+
 7 - flex -> encabezado o pie de pagina?
     * hecho
 
@@ -64,6 +65,10 @@
 
 
 11 - inicio --> dentro de los logos
+    * hecho
+
+
+12 - no me gusta como queda desprolijo teniendo varios ficheros de estilo css. es que un grupo de paginas no comprarten la misma "estructura" que otro grupo de paginas de la web. 
 
 
 
