@@ -1,6 +1,8 @@
 1 - mejorar la paleta de colores
+    * hecho?
 
 2 - modificar/eliminar los bordes
+    * hecho
 
 3 - revisar fuentes (me gustan las monoespaciadas)
     * voy a poner la Fira Code, y de respaldo la familia monoespaciadas
@@ -69,7 +71,7 @@
 
 
 12 - no me gusta como queda desprolijo teniendo varios ficheros de estilo css. es que un grupo de paginas no comprarten la misma "estructura" que otro grupo de paginas de la web. 
-
+    * creo q hecho
 
 
 

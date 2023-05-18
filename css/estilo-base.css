@@ -1,0 +1,211 @@
+/* ------------------------------------------------------------------ */
+/* acá sólo van a estar los estilos del encabezado y pié de página  */
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+/* --esto lo descrubrí muuuuy a lo último, asiq casi no lo implemente, es para ir definiendo la paleta de colores y después ir llamando los colores de acá */
+:root{
+    --color-fondo: #d9b07b;
+    --color-header: #c9ce73;
+    --color-botones: #ad6748;
+    --color-hover: #982061;
+    --color-borde: #2bc8ac;
+    --color-fondo-selector: #2699b0;
+    --color-texto-emergente: beige;
+    --color-fondo-sobre: #d89a78;
+    --color-acordeon: #6d7d1a;
+    --color-acordeon-abierto: #9d6182;
+    --color-sombra-tarjetitas: yellowgreen;
+    --color-fondo-miniaturas: #1a843b;
+    --color-letras-pie: #282828;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+
+/* como ordeno el contenido de toda la pagina, en principio pensada para celu, o sea todo en grid en una sola columna */
+.contenedor-pag{
+    /* width: 95%; */
+    /* margin: 1%; */
+    background-color: var(--color-fondo);
+    display: grid;
+    grid-gap: 0.5%;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+
+/* ordeno los elementos del encabezado */
+.contenedor-pag .encabezado{
+    background-color: var(--color-header);
+    border-radius: 1.5rem;
+    padding: 1%;
+
+    border: 0.2rem var(--color-borde) solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* creo q esto sobre los logos no es necesario, pero gué */
+.logo{
+    display: flex;
+}
+.logo-img{
+    height: 3rem;
+}
+
+/* decoración de los botones para los enlaces */
+.contenedor-pag .encabezado nav a{
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: large;
+    color: azure;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    background-color: var(--color-botones);
+}
+/* efecto al pasar por sobre los botones */
+.contenedor-pag .encabezado nav a:hover{
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.5s;
+    font-size: x-large;
+    color: var(--color-letras-pie);
+    font-weight: bolder;
+    background-color: var(--color-hover);
+}
+.logo:hover{
+    transition: 0.5s;
+    background-color: var(--color-acordeon);
+    border-radius: 1rem;
+    padding-inline: 0.8rem;
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+
+/* -----fooooter----- */
+.contenedor-pag .pie-pagina{
+    background-color: var(--color-header);
+    border-radius: 1.5rem;
+    padding: 1%;
+    border: 0.2rem var(--color-borde) solid;
+
+    font-size: 1.1rem;
+    color: var(--color-letras-pie);
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* doy vuelta el signo de copyleft */
+.copyleft{
+    font-size: 1.5rem;
+    display: inline-block;
+    transform: rotateY(180deg);
+}
+/* centro los contenedores donde estan los textos */
+.footer-contenedor-nosotros{
+    display: block;
+    justify-content: center;
+ }
+ /* ordeno los iconos de las redes sociales e email */
+.footer-contenedor-redes{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* ajusto el tamaño del contenedor a los 32px */
+.footer-contenedor-redes > a{
+    height: 32px;
+}
+/* centro com y copyleft */
+.footer-contenedor-nosotros > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+
+
+
+/* ----------------------------------------------
+|(Lo)            buscar/refus               (Lo) | 
+|------------------------------miniatura ultimos |
+|                |               |       |       |
+|                |               |       |       |
+|    gatx?       |     perrx?    |_______|_______|
+|                |               |       |       |       
+|----------------|---------------|       |       |
+|    resumen quienes somos       |       |       | 
+-------------------------------------------------| 
+|                  pie de pag                    | 
+------------------------------------------------- */
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .contenedor-pag .encabezado{
+        background-color: var(--color-fondo-selector);
+    }
+    .contenedor-pag .encabezado{
+        grid-area: encabezado;
+    }
+    .contenedor-pag .pie-pagina{
+        grid-area: pie-pagina;
+    }
+    .contenedor-pag .pie-pagina{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .footer-contenedor-redes{
+        width: 50%;
+    }
+   
+}
+
+
+
+
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1024px){
+    .contenedor-pag .encabezado{
+        background-color: var(--color-header);
+    }
+    .footer-contenedor-redes{
+        width: 30%;
+    }
+}
+
