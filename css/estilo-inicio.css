@@ -1,7 +1,3 @@
-
-
-
-
 /* 
 .contenedor-pag 
 .principal 
@@ -13,239 +9,213 @@
         .imagen
 */
 /* centro el contenedor "principal" */
-.contenedor-pag .principal{
-    background-color: var(--color-fondo-selector);
-    padding: 3%;
-    border-radius: 1.5rem;
-    margin: 0 auto;
+.contenedor-pag .principal {
+  background-color: var(--color-fondo-selector);
+  padding: 3%;
+  border-radius: 1.5rem;
+  margin: 0 auto;
 }
 /* centro el texto */
-.contenedor-pag h2{
-    text-align: center;
-    /* border: 0.2rem black solid; */
+.contenedor-pag h2 {
+  text-align: center;
+  /* border: 0.2rem black solid; */
 }
 
 /* pongo el texto y el cuadro selector arriba y abajo */
-.contenedor-pag .principal .selector{
-    /* border: 0.2rem gray solid; */
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.7rem;
+.contenedor-pag .principal .selector {
+  /* border: 0.2rem gray solid; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.7rem;
 }
 /* ahora pongo las dos imagenes dentro del cuadro selector una al lado de la otra, y le agrego un espacio entre ellas */
-.contenedor-pag .principal .selector .contenedor-imagen{
-    /* border: 0.2rem black solid; */
-    display: flex;
-    gap: 1%;
-    justify-content: center;
+.contenedor-pag .principal .selector .contenedor-imagen {
+  /* border: 0.2rem black solid; */
+  display: flex;
+  gap: 1%;
+  justify-content: center;
 }
 /* divido el contenedor-imagen en dos mitades iguales */
-.contenedor-pag .principal .selector .contenedor-imagen .cuadro-imagen{
-    max-width: 50%;
+.contenedor-pag .principal .selector .contenedor-imagen .cuadro-imagen {
+  max-width: 50%;
 }
 /* hago que las imagenes se ajusten a sus respectivos contenedores */
-.contenedor-pag .principal .selector .contenedor-imagen .cuadro-imagen .imagen{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-radius: 1rem;
+.contenedor-pag .principal .selector .contenedor-imagen .cuadro-imagen .imagen {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
 }
-
 
 /* ahora voy a hacer q aparezcan los enlaces al pasar sobre las imagenes de seleccion */
-.cuadro-imagen{
-    position: relative;
-    width: 100%;
+.cuadro-imagen {
+  position: relative;
+  width: 100%;
 }
-.texto-sobreimpreso{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    color: var(--color-texto-emergente);
-    font-size: 3rem;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s;
+.texto-sobreimpreso {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--color-texto-emergente);
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
-.texto-sobreimpreso:hover{
-    transition: 0.3s;
-    transform: scale(1.2, 1.5);
-    opacity: 1;
-    z-index: 1;
+.texto-sobreimpreso:hover {
+  transition: 0.3s;
+  transform: scale(1.2, 1.5);
+  opacity: 1;
+  z-index: 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* decorando el "sobre nosotros" */
-.contenedor-pag .sobre{
-    background-color: var(--color-fondo-sobre);
+.contenedor-pag .sobre {
+  background-color: var(--color-fondo-sobre);
+  padding: 3%;
+  border-radius: 1.5rem;
+  margin: 0 auto;
+}
+/* centro el texto */
+.contenedor-pag h3,
+.contenedor-pag p {
+  text-align: center;
+}
+
+/* acordion adaptado de https://www.loginradius.com/blog/engineering/css3-accordion/ */
+.accordion {
+  max-width: 100%;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background-color: var(--color-acordeon);
+}
+
+.accordion__label,
+.accordion__content {
+  padding: 1rem 2rem;
+}
+
+.accordion__label {
+  display: block;
+  color: var(--color-texto-emergente);
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.1s;
+}
+
+.accordion__label:hover {
+  background-color: var(--color-header);
+}
+
+.accordion__content {
+  background: var(--color-acordeon-abierto);
+  /* line-height: 1.6; */
+  /* font-size: 0.85em; */
+  display: none;
+}
+.accordion__content > p {
+  text-align: left;
+}
+.accordion__content .nosotros {
+  font-weight: bold;
+}
+.accordion__content .descripcion {
+  font-style: italic;
+}
+
+.accordion__input {
+  display: none;
+}
+
+.accordion__input:checked ~ .accordion__content {
+  display: block;
+}
+
+/* ------ordenando las tarjetitas ----*/
+.contenedor-pag .miniaturas {
+  background-color: var(--color-fondo-miniaturas);
+  padding: 3%;
+  border-radius: 1.5rem;
+}
+
+/* pongo una grid para ordenar las tarjetas y darle tamaño min */
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}
+
+/* ordeno la imagen respecto de la lista con info, dentro de cada tarjeta */
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 1.5rem;
+  box-shadow: 0 0 3rem var(--color-sombra-tarjetitas);
+}
+.tarjeta img {
+  object-fit: cover;
+  width: 100%;
+  height: 1000%;
+  border-radius: 1.5rem;
+}
+/* escondo la lista con la info */
+.tarjeta ul {
+  display: none;
+}
+
+.contenedor-tarjetas .tarjeta {
+  transition: all 0.25s;
+}
+.contenedor-tarjetas .tarjeta:hover {
+  transform: translateY(-1rem);
+  box-shadow: 0 2rem 2rem var(--color-sombra-tarjetitas);
+}
+
+
+
+/* voy a darle decoración a la sección de comentarios (API desde jsonplaceholder) */
+
+.comentarios{
+    background-color: var(--color-sombra-tarjetitas);
     padding: 3%;
     border-radius: 1.5rem;
     margin: 0 auto;
 }
-/* centro el texto */
-.contenedor-pag h3,
-.contenedor-pag p{
-    text-align: center;
+.comentarios h2{
+    font-size: 1.2rem;
 }
 
-
-/* acordion adaptado de https://www.loginradius.com/blog/engineering/css3-accordion/ */
-.accordion{
-    max-width: 100%;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-    border-radius: 1.5rem;
-    overflow: hidden;
-    background-color: var(--color-acordeon);
-}
-
-.accordion__label, .accordion__content{
-    padding: 1rem 2rem;
-}
-
-.accordion__label{
-    display: block;
-    color: var(--color-texto-emergente);
-    font-weight: bold;
-    cursor: pointer;
-    position: relative;
-    transition: background-color 0.1s;
-}
-
-.accordion__label:hover{
-    background-color: var(--color-header);
-}
-
-.accordion__content{
-    background: var(--color-acordeon-abierto);
-    /* line-height: 1.6; */
-    /* font-size: 0.85em; */
-    display: none;
-}
-.accordion__content > p{
+.quiendijo {
     text-align: left;
 }
-.accordion__content .nosotros{
-    font-weight: bold;
-}
-.accordion__content .descripcion{
-    font-style: italic;
-}
-
-.accordion__input{
-    display: none;
-}
-
-.accordion__input:checked ~ .accordion__content{
-    display: block;
+.quedijo {
+  color: var(--color-hover);
+  font-family: "Times New Roman", Times, serif;
+  text-indent: 2rem;
+  text-align: justify;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border: 0.2rem var(--color-fondo-selector) solid;
+  border-radius: 1.5rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ------ordenando las tarjetitas ----*/
-.contenedor-pag .miniaturas{
-    background-color: var(--color-fondo-miniaturas);
-    padding: 3%;
-    border-radius: 1.5rem;
+.quedijo::first-letter {
+  color: var(--color-acordeon);
+  font-size: 1.5rem;
+  font-weight: bolder;
 }
-
-/* pongo una grid para ordenar las tarjetas y darle tamaño min */
-.contenedor-tarjetas{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 1rem;
-}
-
-/* ordeno la imagen respecto de la lista con info, dentro de cada tarjeta */
-.tarjeta{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 1.5rem;
-    box-shadow: 0 0 3rem var(--color-sombra-tarjetitas);
-}
-.tarjeta img{
-    object-fit: cover;
-    width: 100%;
-    height: 1000%;
-    border-radius: 1.5rem;
-}
-/* escondo la lista con la info */
-.tarjeta ul{
-    display: none;
-}
-
-.contenedor-tarjetas .tarjeta{
-    transition: all 0.25s;
-}
-.contenedor-tarjetas .tarjeta:hover{
-    transform: translateY(-1rem);
-    box-shadow: 0 2rem 2rem var(--color-sombra-tarjetitas);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -255,76 +225,61 @@
 |------------------------------miniatura ultimos |
 |                |               |       |       |
 |                |               |       |       |
-|    gatx?       |     perrx?    |_______|_______|
+|    gatx?       |     perrx?    |       |       |
 |                |               |       |       |       
-|----------------|---------------|       |       |
-|    resumen quienes somos       |       |       | 
+|----------------|---------------|-------|-------|
+|    resumen quienes somos       |  comentarios  | 
 -------------------------------------------------| 
 |                  pie de pag                    | 
 ------------------------------------------------- */
 
-
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .contenedor-pag{
-        display: grid;
-        grid-template-columns: 70% 1fr;
-        grid-template-rows: repeat(4, auto);
-    }
-    .contenedor-pag .principal{
-        grid-area: principal;
-    }
-    .contenedor-pag .sobre{
-        grid-area: sobre;
-    }
-    .contenedor-pag .miniaturas{
-        grid-area: miniaturas;
-    }
+  .contenedor-pag {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: repeat(4, auto);
+  }
+  .contenedor-pag .principal {
+    grid-area: principal;
+  }
+  .contenedor-pag .sobre {
+    grid-area: sobre;
+  }
+  .contenedor-pag .comentarios{
+    grid-area: comentarios;
+  }
+  .contenedor-pag .miniaturas {
+    grid-area: miniaturas;
+  }
 
-    .contenedor-pag{
-        grid-template-areas: "encabezado encabezado"
-                            "principal miniaturas"
-                            "sobre miniaturas"
-                            "pie-pagina pie-pagina";
-    }
+  .contenedor-pag {
+    grid-template-areas:
+      "encabezado encabezado"
+      "principal miniaturas"
+      "sobre comentarios"
+      "pie-pagina pie-pagina";
+  }
 
-    .contenedor-tarjetas{
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-gap: 1rem;
-    }
+  .contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+  }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1024px){
-    .contenedor-pag{
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: repeat(4, auto);
-    }
-    .contenedor-pag{
-        grid-template-areas: "encabezado encabezado"
-                            "principal miniaturas"
-                            "sobre miniaturas"
-                            "pie-pagina pie-pagina";
-    }
+@media only screen and (min-width: 1024px) {
+  .contenedor-pag {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(4, auto);
+  }
+  .contenedor-pag {
+    grid-template-areas:
+      "encabezado encabezado"
+      "principal miniaturas"
+      "sobre comentarios"
+      "pie-pagina pie-pagina";
+  }
 }

@@ -56,3 +56,39 @@ var fechaCorta = ahora.toLocaleString("es-ar", {day:"2-digit", month: "short", y
 var fechaLarga = ahora.toLocaleDateString("es-ar", {weekday:"long", day:"numeric", month: "long", year: "numeric"});
 console.log(fechaCorta)
 console.log(fechaLarga)
+
+
+
+
+// todo lo que sigue es para agregar una pequeña seccion de comentarios, usando un API-Rest desde jsonplaceholder
+
+n = 3; // cantidad de comentarios mostrados
+m = 20; // cantidad de comentarios disponibles, que tambien podría representar la longitud de la base de datos que tiene el placeholder
+
+const arr = []; // así se va a llamar el array donde pongo los indices
+do {const randomNumber = Math.floor(Math.random() * m) + 1
+    if (!arr.includes(randomNumber)) {
+        arr.push(randomNumber);
+    }
+} while (arr.length < n);
+
+
+// los datos van a salir de json-placeholder
+let url = 'https://jsonplaceholder.typicode.com/comments'
+
+fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        texto = "<h2>algunos comentarios de nuestros visitantes:</h2><br>"
+        for (i in arr){
+            texto = texto + `
+            
+            <p class = "quiendijo">${data[i].email.split("@").shift()} dijo: </p>
+
+            <p class= "quedijo">"${data[i].body}"</p>
+            <br>
+            `
+        }
+        document.getElementById("datos").innerHTML = texto
+    })
+    .catch(error => console.log("Ocurrió un error", error))
